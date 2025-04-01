@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option csharp_namespace = "PerfTest.Grpc";
+
+package order;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+// Order service definition
+service OrderService {
+  // RPC method to get order details
+  rpc GetOrders  (google.protobuf.Empty) returns (OrderReply);
+}
+
+// Request message for retrieving an order
+
+
+// Reply message containing order details
+message OrderReply {
+  string order_id = 1;
+  CustomerReply customer = 2;
+  repeated OrderItemReply items = 3;
+  double total_amount = 4;
+  OrderStatusReply status = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+// Customer details
+message CustomerReply {
+  string customer_id = 1;
+  string name = 2;
+  string email = 3;
+  AddressReply address = 4;
+}
+
+// Address details
+message AddressReply {
+  string street = 1;
+  string city = 2;
+  string zip_code = 3;
+  string country = 4;
+}
+
+// Order item details
+message OrderItemReply {
+  string item_id = 1;
+  string name = 2;
+  int32 quantity = 3;
+  double price = 4;
+}
+
+// Enum for order status
+enum OrderStatusReply {
+  PENDING = 0;
+  SHIPPED = 1;
+  DELIVERED = 2;
+  CANCELED = 3;
+}

@@ -1,0 +1,10 @@
+.vs/
+PerfTest.Benchmark/bin/
+PerfTest.Grpc/obj/
+PerfTest.Grpc/bin/
+PerfTest.DataGen/obj/
+PerfTest.DataGen/bin/
+PerfTest.Benchmark/obj/
+PerfTest.Api/bin/
+PerfTest.Api/obj/
+BenchmarkDotNet.Artifacts/

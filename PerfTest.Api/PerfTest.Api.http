@@ -1,0 +1,6 @@
+@PerfTest.Api_HostAddress = http://localhost:5070
+
+GET {{PerfTest.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
