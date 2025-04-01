@@ -24,3 +24,10 @@ Stucture:
     ├───Protos
     └───Services
 ```
+
+How to run everything at once:
+
+dotnet run --configuration Release --project PerfTest.Api
+dotnet run --configuration Release --project PerfTest.Grpc
+
+dotnet run --configuration Release --project PerfTest.Benchmark

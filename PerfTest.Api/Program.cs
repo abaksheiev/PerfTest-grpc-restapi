@@ -8,13 +8,15 @@ using PerfTest.DataGen.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+ 
 // Register AutoMapper and services
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddDataGenServices();
 
 
 var app = builder.Build();
-
+// Configure Kestrel to listen on a specific port (e.g., 5001)
+app.Urls.Add("http://0.0.0.0:5000");  // Expose the API on port 5001
 
 // Define minimal API endpoints
 

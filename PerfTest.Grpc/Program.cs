@@ -13,9 +13,14 @@ namespace PerfTest.Grpc
             // Add services to the container.
             builder.WebHost.ConfigureKestrel(options =>
             {
-              //  options.Limits.Http2.MaxStreamsPerConnection = 512;  // Ограничение количества потоков в HTTP/2 (gRPC использует HTTP/2)
-              //  options.Limits.Http2.KeepAlivePingDelay = TimeSpan.FromSeconds(30);
-              //  options.Limits.Http2.KeepAlivePingTimeout = TimeSpan.FromSeconds(10);
+                // Force Kestrel to use HTTP/2 (required for gRPC)
+                options.ListenAnyIP(5001, listenOptions =>
+                {
+                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;  // Ensure HTTP/2 is enabled
+                });
+                //  options.Limits.Http2.MaxStreamsPerConnection = 512;  // Ограничение количества потоков в HTTP/2 (gRPC использует HTTP/2)
+                //  options.Limits.Http2.KeepAlivePingDelay = TimeSpan.FromSeconds(30);
+                //  options.Limits.Http2.KeepAlivePingTimeout = TimeSpan.FromSeconds(10);
             });
 
             builder.Services.AddGrpc(options => {
@@ -29,6 +34,7 @@ namespace PerfTest.Grpc
 
 
             var app = builder.Build();
+           
 
             // Configure the HTTP request pipeline.
             app.MapGrpcService<OrderServiceApp>();

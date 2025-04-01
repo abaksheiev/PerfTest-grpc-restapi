@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  apiserver:
+    build:
+      context: .
+      dockerfile: api.dockerfile  # Path to your Dockerfile
+    ports:
+      - "5000:5000" # API exposed on port 5000
+  
+  grpcserver:
+    build:
+      context: .
+      dockerfile: grpc.dockerfile  # Path to your Dockerfile
+    ports:
+      - "5001:5001" # GRPC exposed on port 5001
+    
