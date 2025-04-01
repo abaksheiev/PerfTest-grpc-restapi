@@ -26,7 +26,8 @@ Stucture:
 ```
 
 How to run everything at once:
-
+```html
 docker compose build
 docker compose up -d
 dotnet run --configuration Release --project PerfTest.Benchmark
+```
