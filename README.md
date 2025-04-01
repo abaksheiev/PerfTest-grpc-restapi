@@ -1,9 +1,9 @@
 
 Projects:
-PerfTest.Benchmark - tests
-PerfTest.Api - simple rest api
-PerfTest.Grpc - grpc api
-PerfTest.DataGen - data generator
+- PerfTest.Benchmark - tests
+- PerfTest.Api - simple rest api
+- PerfTest.Grpc - grpc api
+- PerfTest.DataGen - data generator
 
 Stucture:
 ```html
