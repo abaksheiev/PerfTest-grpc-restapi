@@ -6,6 +6,7 @@ PerfTest.Grpc - grpc api
 PerfTest.DataGen - data generator
 
 Stucture:
+```html
 ├───BenchmarkDotNet.Artifacts
 ├───PerfTest.Api
 │   ├───Dtos
@@ -22,3 +23,4 @@ Stucture:
     ├───Properties
     ├───Protos
     └───Services
+```
