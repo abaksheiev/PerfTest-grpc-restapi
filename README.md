@@ -1,5 +1,4 @@
-
-Projects:
+Medium article: 
 The solution consists of four projects:
 - PerfTest.Benchmark - A project dedicated to performance testing using BenchmarkDotNet. It runs benchmarks on both REST and gRPC APIs, measuring response times and system resource usage to compare their performance.
 - PerfTest.Api - A simple REST API built with ASP.NET Core. It exposes HTTP endpoints for managing orders and other data, using standard request-response mechanisms over HTTP.
